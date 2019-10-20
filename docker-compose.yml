@@ -1,0 +1,12 @@
+version: '3'
+services:
+  smith-slack:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - "./index.js/:/home/node/app/index.js"
+    ports:
+      - 3000:3000
+    env_file:
+      - .env
